@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #060913;
+    color: #f1f5f9;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+/* Glassmorphism & Gloom Panels */
+.glass-panel {
+  background: rgba(11, 17, 32, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-accent {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* Glow effects */
+.glow-crimson {
+  box-shadow: 0 0 35px -5px rgba(220, 38, 38, 0.45);
+}
+
+.glow-amber {
+  box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.45);
+}
+
+.glow-blue {
+  box-shadow: 0 0 35px -5px rgba(99, 102, 241, 0.4);
+}
+
+.glow-danger {
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.6), inset 0 0 15px rgba(239, 68, 68, 0.3);
+  animation: pulse-danger 1.5s infinite alternate ease-in-out;
+}
+
+/* 3D Card Flip Essentials */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom Keyframe Animations */
+@keyframes pulse-danger {
+  0% { box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); }
+  100% { box-shadow: 0 0 35px rgba(239, 68, 68, 0.8), inset 0 0 15px rgba(239, 68, 68, 0.4); }
+}
+
+@keyframes float-mist-1 {
+  0% { transform: translate3d(-5%, 0, 0) scale(1); opacity: 0.25; }
+  50% { transform: translate3d(5%, -10px, 0) scale(1.08); opacity: 0.45; }
+  100% { transform: translate3d(-5%, 0, 0) scale(1); opacity: 0.25; }
+}
+
+@keyframes float-mist-2 {
+  0% { transform: translate3d(5%, -5px, 0) scale(1.05); opacity: 0.3; }
+  50% { transform: translate3d(-5%, 10px, 0) scale(0.95); opacity: 0.15; }
+  100% { transform: translate3d(5%, -5px, 0) scale(1.05); opacity: 0.3; }
+}
+
+@keyframes moon-rise {
+  0% { transform: translateY(40px) scale(0.85); opacity: 0; }
+  60% { transform: translateY(-8px) scale(1.05); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes sun-burst {
+  0% { transform: scale(0.7) rotate(-15deg); opacity: 0; }
+  50% { transform: scale(1.1) rotate(5deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes stamp-in {
+  0% { transform: scale(1.8) rotate(-10deg); opacity: 0; }
+  70% { transform: scale(0.92) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes pop-spring {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin-orbital {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-mist-1 {
+  animation: float-mist-1 18s ease-in-out infinite;
+}
+
+.animate-mist-2 {
+  animation: float-mist-2 24s ease-in-out infinite;
+}
+
+.animate-moon-rise {
+  animation: moon-rise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-sun-burst {
+  animation: sun-burst 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-stamp {
+  animation: stamp-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-pop-spring {
+  animation: pop-spring 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-orbital {
+  animation: spin-orbital 8s linear infinite;
+}
+
+/* --- GAME-GRADE RPG STYLING & BORDERS --- */
+
+/* Custom Game Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(6, 9, 19, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.6);
+}
+
+/* Ornate Gold Border for Legends / Important Cards */
+.border-ornate-gold {
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 15px -3px rgba(245, 158, 11, 0.25), inset 0 0 15px -3px rgba(245, 158, 11, 0.1);
+  background: linear-gradient(135deg, rgba(30, 24, 15, 0.85) 0%, rgba(15, 23, 42, 0.9) 100%);
+}
+
+/* Ornate Crimson Border for Werewolf / Execution */
+.border-ornate-crimson {
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 20px -3px rgba(220, 38, 38, 0.35), inset 0 0 15px -3px rgba(220, 38, 38, 0.15);
+  background: linear-gradient(135deg, rgba(35, 10, 10, 0.85) 0%, rgba(15, 12, 20, 0.9) 100%);
+}
+
+/* Ornate Mystic Blue Border for Night Phase / Sorcery */
+.border-ornate-blue {
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 20px -3px rgba(99, 102, 241, 0.3), inset 0 0 15px -3px rgba(99, 102, 241, 0.12);
+  background: linear-gradient(135deg, rgba(15, 20, 45, 0.85) 0%, rgba(10, 14, 28, 0.9) 100%);
+}
+
+/* Game Table / Podium Token */
+.player-podium {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.player-podium:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Ancient Runic Glow Animation */
+@keyframes runic-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+    border-color: rgba(245, 158, 11, 0.6);
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.85));
+    border-color: rgba(251, 191, 36, 0.9);
+  }
+}
+
+.animate-runic-pulse {
+  animation: runic-pulse 3s ease-in-out infinite;
+}
+
+/* Particle Drift Keyframes */
+@keyframes float-dust-up {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-280px) translateX(30px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 0.9; transform: scale(1.2); }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Torch Flicker for Tavern / Day Atmosphere */
+@keyframes torch-flicker {
+  0%, 100% { opacity: 0.92; filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.4)); }
+  25% { opacity: 1; filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.6)); }
+  50% { opacity: 0.85; filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.3)); }
+  75% { opacity: 0.96; filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.5)); }
+}
+
+.animate-torch {
+  animation: torch-flicker 2.5s ease-in-out infinite;
+}
+
+/* Heartbeat Pulse for Tense Execution Danger */
+@keyframes heartbeat-danger {
+  0% { transform: scale(1); box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+  14% { transform: scale(1.03); box-shadow: 0 0 35px rgba(239, 68, 68, 0.8); }
+  28% { transform: scale(1); box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+  42% { transform: scale(1.04); box-shadow: 0 0 40px rgba(239, 68, 68, 0.9); }
+  70% { transform: scale(1); box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+}
+
+.animate-heartbeat-danger {
+  animation: heartbeat-danger 1.4s ease-in-out infinite;
+}
+
+/* Zzz Floating Indicator for Night Slumber */
+@keyframes float-zzz {
+  0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+  30% { opacity: 0.9; }
+  80% { opacity: 0.5; }
+  100% { transform: translate(12px, -24px) scale(1.1); opacity: 0; }
+}
+
+.animate-zzz-1 {
+  animation: float-zzz 2.4s ease-in-out infinite;
+}
+.animate-zzz-2 {
+  animation: float-zzz 2.4s ease-in-out infinite 0.8s;
+}
+.animate-zzz-3 {
+  animation: float-zzz 2.4s ease-in-out infinite 1.6s;
+}
+
+/* Antique Parchment Style */
+.parchment-panel {
+  background: linear-gradient(180deg, #1c150c 0%, #0d0f17 100%);
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(251, 191, 36, 0.2);
+}
+
+/* Floating Emote Drift Up Animation */
+@keyframes drift-up {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    transform: translateY(-40px) scale(1.15);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-280px) scale(1.0);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-440px) scale(0.75);
+    opacity: 0;
+  }
+}
+
+.animate-drift-up {
+  animation: drift-up 3.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
